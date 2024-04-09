@@ -159,6 +159,8 @@ impl Miner {
         )));
         let signer = self.signer();
         let pubkey = signer.pubkey();
+        // print threads
+        println!("Threads: {}", threads);
         let thread_handles: Vec<_> = (0..threads)
             .map(|i| {
                 std::thread::spawn({
